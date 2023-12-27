@@ -1,0 +1,16 @@
+<form [formGroup]="form" (submit)="submit()">
+    <h1 class="h3 mb-3 fw-normal">Music Therapy Login</h1>
+
+    <div class="form-floating mb-3">
+        <input formControlName="email" type="email" class="form-control" id="floatingEmail" placeholder="Email" required>
+        <label for="floatingEmail">Enter Your Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Enter Your Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Login</button>
+</form>
+

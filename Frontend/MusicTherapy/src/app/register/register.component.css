@@ -1,0 +1,12 @@
+.form-control {
+    max-width: 330px;
+    margin: auto;
+}
+.form-floating {
+    max-width: 330px;
+    margin: auto;
+}
+.btn {
+    max-width: 330px;
+    margin: auto;
+}

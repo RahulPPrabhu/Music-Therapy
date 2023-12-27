@@ -1,0 +1,270 @@
+<div class="container">
+    <h1>Mental Health Disorder Prediction</h1>
+    <div class="container dropdown">
+      <p>Select the Symptoms</p>
+      <form (ngSubmit)="OnSubmit(myform)" #myform="ngForm">
+        <select class="form-select" name="Symptom1" (change)="change($event)">
+          <option [defaultSelected]="true">--Select Symptom 1--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+        
+        <br />
+  
+        <select class="form-select" name="Symptom2" (change)="change1($event)">
+          <option [defaultSelected]="true">--Select Symptom 2--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+  
+        <br />
+  
+        <select class="form-select" name="Symptom3" (change)="change2($event)">
+          <option [defaultSelected]="true">--Select Symptom 3--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+  
+        <br />
+  
+        <select class="form-select" name="Symptom4" (change)="change3($event)">
+          <option [defaultSelected]="true">--Select Symptom 4--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+  
+        <br />
+  
+        <select class="form-select" name="Symptom5" (change)="change4($event)">
+          <option [defaultSelected]="true">--Select Symptom 5--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+  
+        <br />
+  
+        <select class="form-select" name="Symptom6" (change)="change5($event)">
+          <option [defaultSelected]="true">--Select Symptom 6--</option>
+          <option value="Restless">Restless</option>
+          <option value="Fatigued">Fatigued</option>
+          <option value="Difficulty concentrating">Difficulty Concentrating</option>
+          <option value="Irritable">Irritable</option>
+          <option value="Headaches">Headaches</option>
+          <option value="Unexplained pains">Unexplained Pains</option>
+          <option value="Sleep problems">Sleep Problems</option>
+          <option value="Pounding heart">Pounding Heart</option>
+          <option value="Sweating">Sweating</option>
+          <option value="Trembling">Trembling</option>
+          <option value="Chest pain">Chest Pain</option>
+          <option value="Impending doom">Impending Doom</option>
+          <option value="Out of control">Out of Control</option>
+          <option value="Blushing">Blushing</option>
+          <option value="Stomachaches">Stomachaches</option>
+          <option value="Rigid body posture">Rigid Body Posture</option>
+          <option value="Fear of negative judgement">Fear of Negative Judgement</option>
+          <option value="Depressed mood">Depressed Mood</option>
+          <option value="Loss of interest">Loss of Interest</option>
+          <option value="Feeling worthless">Feeling Worthless</option>
+          <option value="Persistent sadness">Persistent Sadness</option>
+          <option value="Feeling hopeless">Feeling Hopeless</option>
+          <option value="Difficulty making decisions">Difficulty Making Decisions</option>
+          <option value="Feelings of guilt">Feelings of Guilt</option>
+          <option value="Changes in appetite">Changes in Appetite</option>
+          <option value="Feeling tired">Feeling Tired</option>
+          <option value="Low energy">Low Energy</option>
+          <option value="Difficulty making eye contact">Difficulty Making Eye Contact</option>
+          <option value="Changes in weight">Changes in Weight</option>
+          <option value="Low self-esteem">Low Self-Esteem</option>
+          <option value="Overeating">Overeating</option>
+          <option value="Insomnia">Insomnia</option>
+          <option value="Hypersomnia">Hypersomnia</option>
+          <option value="High energy">High Energy</option>
+          <option value="Increased activity">Increased Activity</option>
+          <option value="Rapid speech">Rapid Speech</option>
+          <option value="Involvement in risky activities">Involvement in Risky Activities</option>
+        </select>
+        <br />
+        <button class="btn btn-outline-primary mb-3" type="submit">Predict</button>
+      </form>
+      <div *ngIf="Disordersrfc" class="alert alert-primary" role="alert">
+        The Predicted Disorder is: {{Disordersrfc}}
+    </div>
+    
+    </div>
+  </div>
+
