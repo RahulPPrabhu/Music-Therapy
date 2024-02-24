@@ -1,0 +1,24 @@
+body{
+    background-color: #FFF000;
+}
+.home {
+    width: 25%;
+    margin-top: 10%;
+    margin-right: 50em;
+}
+.home h5{
+    text-align: justify;
+    font-weight: 600;
+}
+.home p{
+    text-align: justify;
+}
+.home,.image{
+    display: inline-block;
+}
+.image .img{
+    width: 660px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}

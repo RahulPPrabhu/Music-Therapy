@@ -1,0 +1,16 @@
+.form-select {
+    width: 25%;
+    margin-bottom: 5px;
+    margin-left: 35%;
+}
+#name {
+    background-color: brown;
+    color: white;
+    width: 5%;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    cursor: not-allowed;
+}

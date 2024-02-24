@@ -1,0 +1,70 @@
+<div class="container">
+  <p id="name">{{name}}</p>
+    <h1>My Therapy</h1>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Disorder</th>
+          <th>Date of Diagonises</th>
+          <th>Time of Diagonises</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let disorder of disorders">
+        <tr>
+          <td>{{disorder._id}}</td>
+          <td>{{disorder.email}}</td>
+          <td>{{disorder.disorder}}</td>
+          <td>{{disorder.date}}</td>
+          <td>{{disorder.time}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Song</h2>
+    <iframe [src]="youtubeUrl" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    <h3>Recommended Songs</h3>
+    <select class="form-select" [(ngModel)]="recommendedSong" (ngModelChange)="onSongSelect($event)">
+      <option value="null" disabled>--Select Similar Songs--</option>
+      <option *ngFor="let songs of recommendations">{{songs}}</option>
+    </select>
+    <h3>Schedule Therapy</h3>
+    <form (ngSubmit)="OnSubmit(myform)" #myform="ngForm">
+      <select class="form-select" [(ngModel)]="selectedHr" name="hr">
+        <option value="null" disabled selected>--Hr--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select class="form-select" [(ngModel)]="selectedMin" name="min">
+        <option value="null" disabled selected>--Min--</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="25">25</option>
+        <option value="30">30</option>
+        <option value="35">35</option>
+        <option value="40">40</option>
+        <option value="45">45</option>
+        <option value="50">50</option>
+        <option value="55">55</option>
+        <option value="00">00</option>
+      </select>
+      <select class="form-select" [(ngModel)]="selectedAmPm" name="ampm">
+        <option value="null" disabled selected>--AM/PM--</option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <button class="btn btn-outline-dark">Confirm Therapy</button>
+    </form>
+  </div>

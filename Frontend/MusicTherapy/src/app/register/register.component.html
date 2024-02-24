@@ -1,0 +1,41 @@
+<form [formGroup]="form" (submit)="submit()">
+    <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+
+    <div class="form-floating mb-3">
+        <input formControlName="name" class="form-control" id="floatingName" placeholder="Name" required>
+        <label for="floatingName">Enter Your Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input formControlName="email" type="email" class="form-control" id="floatingEmail" placeholder="Email" required>
+        <label for="floatingEmail">Enter Your Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+        <label for="floatingPassword">Enter Your Password</label>
+    </div>
+
+    <!-- Added these new fields -->
+    <div class="form-floating mb-3">
+        <input formControlName="dob" type="date" class="form-control" id="floatingDOB" required>
+        <label for="floatingDOB">Enter Your Date of Birth</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input formControlName="occupation" class="form-control" id="floatingOccupation" placeholder="Occupation" required>
+        <label for="floatingOccupation">Enter Your Occupation</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select formControlName="gender" class="form-control" id="floatingGender" required>
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <label for="floatingGender">Select Your Gender</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+</form>

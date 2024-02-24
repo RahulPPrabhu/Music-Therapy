@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    color: blue;
+}
+.dropdown {
+    width: 50%;
+}
+#name {
+    background-color: brown;
+    color: white;
+    width: 5%;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10%;
+    left: 5px;
+    cursor: not-allowed;
+}
