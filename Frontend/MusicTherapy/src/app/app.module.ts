@@ -14,6 +14,7 @@ import { DisorderComponent } from './disorder/disorder.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SongComponent } from './song/song.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HomeComponent,
     DisorderComponent,
     WelcomeComponent,
+    SongComponent,
   ],
   imports: [
     BrowserModule,

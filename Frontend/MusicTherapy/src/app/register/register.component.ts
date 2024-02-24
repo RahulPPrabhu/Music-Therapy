@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
           this.toastr.error("Enter valid email", "Error");
       }
       else {
-        this.http.post("http://localhost:5000/api/register",user, {
+        this.http.post("http://localhost:5001/api/register",user, {
           withCredentials: true
         })
         .subscribe(() => {

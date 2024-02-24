@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit{
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:5000/api/user', {
+    this.http.get('http://localhost:5001/api/user', {
       withCredentials: true
     })
       .subscribe(
