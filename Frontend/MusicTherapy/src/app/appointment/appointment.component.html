@@ -1,0 +1,17 @@
+<p id="name">{{name}}</p>
+<h1>Therapist Appointment</h1>
+<div class="alert alert-danger" role="alert">
+    Please Book the Appointment only on the previous day. This application automatically books the
+    Appointment for the next day. It's slot basics so book only if available.
+    <pre><h6><b>The Therapist will be available from 5 to 7PM everyday.</b></h6></pre>
+</div>
+<div class="grid-container">
+    <div *ngFor="let therapist of therapistDetails" class="grid-item">
+        <h4>{{therapist.therapistName}}</h4>
+        <img class="profilePic" src="assets/Therapist.png" alt="therapistPic">
+        <h6>Specialization: {{therapist.specialization}}</h6>
+        <h5>Status: {{therapist.status}}</h5>
+        <button class="btn btn-outline-primary" [disabled]="therapist.status === 'Assigned'"
+            (click)="assignStatus(therapist)">Book Appointment</button>
+    </div>
+</div>

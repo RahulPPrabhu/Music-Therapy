@@ -59,7 +59,7 @@ data_dict = {
 def predictDisease(symptoms):
     input_data = [0] * len(data_dict["symptom_index"])
     for symptom in symptoms:
-        symptom = symptom.split(",")
+        symptom = symptom.split(",")  # split each symptom string into a list
         for s in symptom:
             index = data_dict["symptom_index"][s]
             input_data[index] = 1

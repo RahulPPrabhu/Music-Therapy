@@ -20,7 +20,7 @@ app.use("/api", routes);
 mongoose.connect("mongodb://127.0.0.1:27017/musictherapy")
 .then(() => {
     console.log("Connected to Database");
-    app.listen(5000, () => {
-        console.log("App is listening on port 5000");
+    app.listen(5001, () => {
+        console.log("App is listening on port 5001");
     });
 });

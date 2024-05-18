@@ -28,18 +28,18 @@ export class SongComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get('http://localhost:5001/api/userDetails', { withCredentials: true })
-    .subscribe({
-      next: (response: any) => {
-        console.log(response);
-        this.email = response.email;
-        this.name = response.name; // Store the name in the component's property
-        console.log(`The email of the current logged in user is ${this.email}`);
-        console.log(`The name of the current logged in user is ${this.name}`);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+      .subscribe({
+        next: (response: any) => {
+          console.log(response);
+          this.email = response.email;
+          this.name = response.name; // Store the name in the component's property
+          console.log(`The email of the current logged in user is ${this.email}`);
+          console.log(`The name of the current logged in user is ${this.name}`);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
 
     this.http.get<any[]>(this.API_URL, { withCredentials: true }).subscribe(
       data => {
@@ -70,23 +70,43 @@ export class SongComponent implements OnInit {
   }
 
   OnSubmit(form: NgForm) {
+
     console.log(this.selectedHr, this.selectedMin, this.selectedAmPm);
-    this.toastr.success("Scheduled Successfully", "Done", {
-      progressBar: true
-    });
-    const url = 'http://localhost:5001/api/sendEmail';
-    const body = {
-      email: this.email,
-      hour: this.selectedHr,
-      minute: this.selectedMin,
-      ampm: this.selectedAmPm
-    };
-    this.http.post(url, body).subscribe(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+
+    const now = new Date();
+
+    let appointmentDate = new Date();
+    appointmentDate.setHours(this.selectedHr, this.selectedMin, 0, 0);
+
+    if (appointmentDate < now) {
+      appointmentDate.setDate(appointmentDate.getDate() + 1);
+    }
+
+    const appointmentDateString = appointmentDate.toISOString().substring(0, 10);
+
+    if (!this.selectedHr || !this.selectedMin || !this.selectedAmPm) {
+      this.toastr.error("Please Fill all the details", "Missing Fields")
+    }
+    else {
+      this.toastr.success("Scheduled Successfully", "Done", {
+        progressBar: true
+      });
+      const url = 'http://localhost:5001/api/sendEmail';
+      const body = {
+        email: this.email,
+        hour: this.selectedHr,
+        minute: this.selectedMin,
+        ampm: this.selectedAmPm,
+        date: appointmentDateString
+      };
+      this.http.post(url, body).subscribe(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+    }
   }
+
 
   songSuggestion(disorder: string): string {
     let song = '';
@@ -109,7 +129,6 @@ export class SongComponent implements OnInit {
       song = "Demons"
     }
 
-    // Post request to the flask application
     this.http.post('http://localhost:5000/predict', { song: song }).subscribe(
       data => {
         console.log(data);

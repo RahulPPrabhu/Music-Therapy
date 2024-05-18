@@ -1,0 +1,57 @@
+<div class="chart-container">
+    <div class="questionary">
+        <div class="question-group">
+            <p class="question">How do you like the effectiveness of the music?</p>
+            <input type="radio" id="good" name="score" value="5"  [(ngModel)]="selectedOptions.score" />
+            <label for="good">Good</label>
+
+            <input type="radio" id="Ineffective" name="score" value="0" [(ngModel)]="selectedOptions.score" />
+            <label for="Ineffective">Ineffective</label>
+
+            <input type="radio" id="Excellent" name="score" value="10" [(ngModel)]="selectedOptions.score" />
+            <label for="Excellent">Excellent</label>
+        </div>
+        <div class="question-group">
+            <p class="question">How do you feel after listening to calming music?</p>
+            <input type="radio" id="relaxed" name="mood" value="10" [(ngModel)]="selectedOptions.mood" />
+            <label for="relaxed">Relaxed</label>
+
+            <input type="radio" id="energized" name="mood" value="9.5" [(ngModel)]="selectedOptions.mood" />
+            <label for="energized">Energized</label>
+
+            <input type="radio" id="sleepy" name="mood" value="8" [(ngModel)]="selectedOptions.mood" />
+            <label for="sleepy">Sleepy</label>
+        </div>
+        <div class="question-group">
+            <p class="question">Do you find music helpful for concentration?</p>
+            <input type="radio" id="yes-concentration" name="instrumental" value="10" [(ngModel)]="selectedOptions.music" />
+            <label for="yes-concentration">Yes</label>
+
+            <input type="radio" id="no-concentration" name="instrumental" value="0" [(ngModel)]="selectedOptions.music" />
+            <label for="no-concentration">No</label>
+        </div>
+        <div class="question-group">
+            <p class="question">How likely are you to use music as a stress-relief tool regularly?</p>
+            <input type="radio" id="likely" name="stress-relief" value="10" [(ngModel)]="selectedOptions.stress" />
+            <label for="likely">Likely</label>
+
+            <input type="radio" id="unlikely" name="stress-relief" value="0" [(ngModel)]="selectedOptions.stress" />
+            <label for="unlikely">Unlikely</label>
+        </div>
+        <div class="question-group">
+            <p>How is your health compared to previous day?</p>
+            <input type="radio" id="better" name="rating" value="10" [(ngModel)]="selectedOptions.health" />
+            <label for="better">I'm Feeling Better</label>
+
+
+            <input type="radio" id="worse" name="rating" value="0" [(ngModel)]="selectedOptions.health" />
+            <label for="worse">Deteriorated Health</label>
+
+            <input type="radio" id="same" name="rating" value="5" [(ngModel)]="selectedOptions.health" />
+            <label for="same">No Change</label>
+        </div>
+        <button (click)="createBarChart()" class="btn btn-outline-primary">Generate Chart</button>
+    </div>
+
+    <canvas #barChart class="chart"></canvas>
+</div>

@@ -6,6 +6,8 @@ import { RegisterComponent } from './register/register.component';
 import { DisorderComponent } from './disorder/disorder.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SongComponent } from './song/song.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { HealthStatusComponent } from './health-status/health-status.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +15,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'disorder', component: DisorderComponent},
   {path: 'welcome', component: WelcomeComponent},
-  {path: 'song', component: SongComponent}
+  {path: 'song', component: SongComponent},
+  {path: 'appointment', component: AppointmentComponent},
+  {path: 'status', component: HealthStatusComponent},
 ];
 
 @NgModule({

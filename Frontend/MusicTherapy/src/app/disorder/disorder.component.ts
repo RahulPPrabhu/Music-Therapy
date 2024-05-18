@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -20,22 +20,22 @@ export class DisorderComponent implements OnInit {
   symptoms5 !: string;
   symptoms6 !: string;
 
-  constructor(private http: HttpClient, private toastr: ToastrService) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.http.get('http://localhost:5001/api/userDetails', { withCredentials: true })
-    .subscribe({
-      next: (response: any) => {
-        console.log(response);
-        this.email = response.email;
-        this.name = response.name ? response.name : 'Name not available';
-        console.log(`The email of the current logged in user is ${this.email}`);
-        console.log(`The user name is ${this.name}`);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
+      .subscribe({
+        next: (response: any) => {
+          console.log(response);
+          this.email = response.email;
+          this.name = response.name ? response.name : 'Name not available';
+          console.log(`The email of the current logged in user is ${this.email}`);
+          console.log(`The user name is ${this.name}`);
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
   }
 
   change(event: any) {
@@ -72,15 +72,19 @@ export class DisorderComponent implements OnInit {
       this.symptoms5,
       this.symptoms6
     ];
-  
-    this.http.post('http://localhost:3300/predict', {symptoms: symptoms}).subscribe({
-      next: (response: any) => {
-        this.toastr.success("Successfully Predicted", "Done", {
-          progressBar: true
-        });
-        this.Disordersrfc = response.disorder_rfc;
-  
-        this.http.post('http://localhost:5001/api/storeDisorder', {
+
+    if (!this.symptoms1 || !this.symptoms2 || !this.symptoms3 || !this.symptoms4 || !this.symptoms5 || !this.symptoms6) {
+      this.toastr.error("Fill all the fields", "Require Data")
+    } else {
+
+      this.http.post('http://localhost:3300/predict', { symptoms: symptoms }).subscribe({
+        next: (response: any) => {
+          this.toastr.success("Successfully Predicted", "Done", {
+            progressBar: true
+          });
+          this.Disordersrfc = response.disorder_rfc;
+
+          this.http.post('http://localhost:5001/api/storeDisorder', {
             disorder: this.Disordersrfc,
             email: this.email,
           }).subscribe({
@@ -94,10 +98,11 @@ export class DisorderComponent implements OnInit {
               console.log('Error Storing Data', err);
             }
           });
-      },
-      error: error => {
-        console.log(error);
-      }
-    });
+        },
+        error: error => {
+          console.log(error);
+        }
+      });
+    }
   }
 }  

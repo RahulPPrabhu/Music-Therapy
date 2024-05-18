@@ -6,7 +6,7 @@
 #name {
     background-color: brown;
     color: white;
-    width: 5%;
+    width: auto;
     padding: 5px;
     border-radius: 5px;
     position: absolute;
