@@ -174,13 +174,13 @@ router.post('/sendEmail', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'aitherapy.music@gmail.com',
-            pass: 'tbpv ycsv dtod aiaf'
+            user: 'something@gmail.com',
+            pass: 'password goes here'
         }
     });
 
     let mailOptions = {
-        from: 'aitherapy.music@gmail.com',
+        from: 'something@gmail.com',
         to: email,
         subject: 'Therapy Schedule',
         html: `
@@ -217,13 +217,13 @@ router.post('/confirmAppointment', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'aitherapy.music@gmail.com',
-            pass: 'tbpv ycsv dtod aiaf'
+            user: 'something@gmail.com',
+            pass: 'password goes here'
         }
     });
 
     let mailOptions = {
-        from: 'aitherapy.music@gmail.com',
+        from: 'something@gmail.com',
         to: email,
         subject: 'Therapy Schedule',
         html: `
