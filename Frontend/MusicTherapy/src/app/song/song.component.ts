@@ -143,7 +143,7 @@ export class SongComponent implements OnInit {
   }
 
   async fetchVideoId(songName: string): Promise<void> {
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${songName}+lyrical&key=AIzaSyAUfjzmBAvTURLpH3rUiRVgtcO7mvJ_qfo`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${songName}+lyrical&key=YOUR_API_KEY`);
     const data = await response.json();
     const items = data.items;
     if (items.length > 0) {
